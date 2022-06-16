@@ -1,1 +1,15 @@
 notas
+
+DELIMITER //
+DROP PROCEDURE if EXIST SP_nombre_consultar // 
+CREATE PROCEDURE SP_nombre_consultar
+(
+  IN pedirNombre varchar(20)
+)
+BEGIN
+  SELECT * FROM tipoproducto
+  WHERE nombre=pedirNombre;
+END;
+//
+CALL SP_nombre_consultar('pc');
+
