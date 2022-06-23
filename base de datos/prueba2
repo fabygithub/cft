@@ -12,6 +12,6 @@ select * from tipoproducto;
 Alter table tipoproducto 
 modify nombre varchar(30);
 
-
+drop table tipoproducto;
 
   
