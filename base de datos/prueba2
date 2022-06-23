@@ -85,5 +85,15 @@ region varchar(60) not null,
 telefono varchar(15) not null);
 
 
+DROP table if exists loginUsuarios;
+create table loginUsuarios(
+	usuario varchar(30) primary key,
+    contrasena varchar(40),
+    metodo varchar(50));
+    
+    
+
+Update loginusuarios set contrasena = 'teclado222' 
+where usuario = "Alfredo";
 
 
