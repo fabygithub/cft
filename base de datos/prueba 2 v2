@@ -55,6 +55,15 @@ CREATE TABLE tipoProducto(
 	
 
 
+drop table if exists producto;
+CREATE TABLE producto(
+	idProducto int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+		idTipoProducto int not null,
+		codigo varchar(20) not null,
+        descripcion varchar(50),
+        cantidad int,
+        precio int,
+        foreign key(idTipoProducto) references tipoProducto(idTipoProducto));
 
 
 
@@ -111,15 +120,7 @@ delete from producto
 where idProducto = 1;
 
 
-drop table if exists producto;
-CREATE TABLE producto(
-	idProducto int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-		idTipoProducto int not null,
-		codigo varchar(20) not null,
-        descripcion varchar(50),
-        cantidad int,
-        precio int,
-        foreign key(idTipoProducto) references tipoProducto(idTipoProducto));
+
 
 
 create table proveedores(
