@@ -1,1 +1,9 @@
-create database tienda;
+create database tienda;            
+Use tienda;
+CREATE TABLE tipoProducto(
+	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
+	Nombre varchar(20));
+  
+  
+  select * from tipoproducto;
+  
