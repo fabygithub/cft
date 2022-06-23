@@ -19,7 +19,12 @@ where idTipoProducto = "1";
 delete from tipoproducto 
 where idTipoProducto = 1;
 
-drop table tipoproducto;
+drop table if exists tipoproducto;
+CREATE TABLE tipoProducto(
+	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
+	Nombre varchar(20));
+	
+	
 
   
 
@@ -43,10 +48,10 @@ select * from producto;
 Alter table producto 
 modify codigo varchar(30);
 
-Update producto set nombre = 'teclado22' 
+
+Update producto set codigo = 'teclado22' 
 where idProducto = "1";
 
 
-
-
-
+delete from producto 
+where idProducto = 1;
