@@ -4,8 +4,8 @@ CREATE TABLE tipoProducto(
 	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
 	Nombre varchar(20));
   
-INSERT INTO tipoproducto (nombre)
-VALUES ('Zapatilla');
+insert into tipoProducto values 
+(null, 'teclado');
 
 select * from tipoproducto;
 
@@ -31,3 +31,8 @@ CREATE TABLE producto(
 	
 	
 	
+insert into producto values
+		(1,1,'tecl','teclado negro',100,2000);
+		
+		
+		
