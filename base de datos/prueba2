@@ -12,9 +12,9 @@ select * from tipoproducto;
 Alter table tipoproducto 
 modify nombre varchar(30);
 
-Update student set marks = 100 
-where name = "ravi";
-
+use tienda;
+Update tipoprodructo set nombre = 'teclado2' 
+where idTipoProducto = "1";
 
 delete from tipoproducto 
 where idTipoProducto = 1;
