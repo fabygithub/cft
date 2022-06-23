@@ -43,6 +43,9 @@ select * from producto;
 Alter table producto 
 modify codigo varchar(30);
 
+Update producto set nombre = 'teclado22' 
+where idProducto = "1";
+
 
 
 
