@@ -99,6 +99,29 @@ alter table producto add total int;
 update producto set total=iva+subtotal;
 
 
+Alter table producto 
+modify codigo varchar(30);
+
+
+Update producto set codigo = 'teclado22' 
+where idProducto = "1";
+
+
+delete from producto 
+where idProducto = 1;
+
+
+drop table if exists producto;
+CREATE TABLE producto(
+	idProducto int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+		idTipoProducto int not null,
+		codigo varchar(20) not null,
+        descripcion varchar(50),
+        cantidad int,
+        precio int,
+        foreign key(idTipoProducto) references tipoProducto(idTipoProducto));
+
+
 create table proveedores(
 idproveedor int primary key auto_increment not null,
 nombrecompañia varchar(40) not null,
