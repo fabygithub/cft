@@ -1,0 +1,218 @@
+create database tienda;
+
+Use tienda;
+
+CREATE TABLE tipoProducto(
+	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
+	Nombre varchar(20));
+    
+CREATE TABLE producto(
+	idProducto int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+		idTipoProducto int not null,
+		codigo varchar(20) not null,
+        descripcion varchar(50),
+        cantidad int,
+        precio int,
+        foreign key(idTipoProducto) references tipoProducto(idTipoProducto));
+        
+insert into tipoProducto values
+	(null, 'teclado'),
+	(null,'pc'),
+	(null,'mouse'),
+	(null,'tablet'),
+	(null,'notebook');
+
+/*select * from tipoProducto;
+select nombre from tipoProducto;
+SELECT	nombre, idTipoProducto From tipoProducto;
+SELECT	nombre as Nombre, idTipoProducto as "ID de Producto" From tipoProducto;
+
+select * from tipoProducto order by idTipoProducto desc;
+
+select * from tipoProducto where idTipoProducto =1;
+select * from tipoProducto where nombre = 'teclado';
+select * from tipoProducto where idTipoProducto between 2 and 4;
+select * from tipoProducto where nombre like '%te%';*/
+
+
+
+
+
+Alter table tipoproducto 
+modify nombre varchar(30);
+
+use tienda;
+Update tipoproducto set nombre = 'teclado2' 
+where idTipoProducto = "1";
+
+delete from tipoproducto 
+where idTipoProducto = 1;
+
+drop table if exists tipoproducto;
+CREATE TABLE tipoProducto(
+	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
+	Nombre varchar(20));
+	
+
+
+drop table if exists producto;
+CREATE TABLE producto(
+	idProducto int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+		idTipoProducto int not null,
+		codigo varchar(20) not null,
+        descripcion varchar(50),
+        cantidad int,
+        precio int,
+        foreign key(idTipoProducto) references tipoProducto(idTipoProducto));
+
+
+
+
+insert into producto values
+		(1,1,'tecl','teclado negro',100,2000),
+        (null,5,'mo','mouse negro',100,2000),
+        (null,2,'compu','computador msi',5,10000),
+        (null,5,'mo','mouse inalambrico',25,1500),
+        (null,4,'hp','notebook LG',10,50000),
+        (null,2,'msi','computador de escritorio',30,150000);
+
+/*select sum(cantidad) as 'Cantidad de producto' from producto where idTipoProducto =1;
+select avg(precio) as 'Promedio de los precios' from producto where idTipoProducto =1;
+select max(precio) as 'Dato mas alto de los precios' from producto;
+select min(precio) as 'Dato mas bajo de los precios' from producto;
+select count(codigo) as 'Cuenta los Dato por codigo' from producto;
+
+select idTipoProducto, cantidad*precio from producto;
+select *, cantidad*precio from producto;
+select*,cantidad+10 as 'Nueva cantidad' from producto;
+Select * from producto, tipoProducto;
+
+select tipoproducto.Nombre as Nombre, cantidad as Cantidad, precio as Precio from producto
+inner join tipoproducto on producto.idTipoProducto = tipoproducto.idTipoProducto;
+
+select tipoproducto.idTipoProducto, producto.idTipoProducto from tipoproducto, producto;
+select t.idtipoproducto, p.idtipoproducto from tipoproducto t,producto p;
+select t.*, p.* from tipoproducto t,producto p;
+select t.idtipoproducto, nombre, p.idtipoproducto, codigo, descripcion, cantidad, precio from tipoproducto t,producto p;
+*/
+alter table producto add subtotal int;
+/*select * from producto;*/
+update producto set subtotal=cantidad*precio;
+
+alter table producto add iva double;
+/*select * from producto;*/
+update producto set iva=subtotal*0.19;
+
+alter table producto add total int;
+/*select * from producto;*/
+update producto set total=iva+subtotal;
+
+
+Alter table producto 
+modify codigo varchar(30);
+
+
+Update producto set codigo = 'teclado22' 
+where idProducto = "1";
+
+
+delete from producto 
+where idProducto = 1;
+
+
+
+
+
+create table proveedores(
+idproveedor int primary key auto_increment not null,
+nombrecompañia varchar(40) not null,
+nombre varchar(20) not null,
+apellido varchar(20) not null,
+cargo varchar(40) not null,
+direccion varchar(40) not null,
+ciudad varchar(40) not null,
+region varchar(60) not null,
+telefono varchar(15) not null);
+
+alter table producto add idproveedor int;
+
+alter table producto add constraint idproveedor
+foreign key(idproveedor) 
+references proveedores(idproveedor);
+
+insert into proveedores values
+(null,'compañoa s.a','Jorge','Rojas','Proveedor','Avda. Franncia','Santiago','Region metropolitana','65445'),
+(null,'sitio s.a.','Juan','Varas','Cliente','Avda. las Pataguas','Valparaiso','Viña del mar','345654');
+
+update producto set idproveedor = 1 where producto.idProducto=1;
+update producto set idproveedor = 2 where producto.idProducto=2;
+update producto set idproveedor = 2 where producto.idProducto=3;
+update producto set idproveedor = 1 where producto.idProducto=4;
+
+Select codigo, t.nombre, cantidad, precio, subtotal, pr.nombre, apellido, cargo
+from producto p, tipoproducto t, proveedores pr
+where t.idtipoproducto=p.idTipoProducto
+and p.idproveedor=pr.idproveedor;
+
+show tables;
+
+describe producto;
+
+select MD5('HOLA');
+select SHA1('HOLA');
+
+
+delete from proveedores 
+where idProveedor = 1;
+
+drop table if exists proveedores;
+create table proveedores(
+idproveedor int primary key auto_increment not null,
+nombrecompañia varchar(40) not null,
+nombre varchar(20) not null,
+apellido varchar(20) not null,
+cargo varchar(40) not null,
+direccion varchar(40) not null,
+ciudad varchar(40) not null,
+region varchar(60) not null,
+telefono varchar(15) not null);
+
+
+
+
+DROP table if exists loginUsuarios;
+create table loginUsuarios(
+	usuario varchar(30) primary key,
+    contrasena varchar(40),
+    metodo varchar(50));
+
+insert into loginusuarios(usuario,contrasena,metodo)
+values('Fernando',MD5('HOLA'),'MD5');
+
+SELECT * FROM loginusuarios;
+
+insert into loginusuarios(usuario,contrasena,metodo)
+values('Alfredo',SHA('HOLA'),'SHA'),
+('Ignacio',SHA1('HOLA'),'SHA1'),
+('Benjamin','HOLA','TEXTO');
+
+Select *
+from loginusuarios
+where usuario = 'Fernando'
+and contrasena = MD5('HOLA');
+
+
+DROP table if exists loginUsuarios;
+create table loginUsuarios(
+	usuario varchar(30) primary key,
+    contrasena varchar(40),
+    metodo varchar(50));
+    
+    
+
+Update loginusuarios set contrasena = 'teclado222' 
+where usuario = "Alfredo";
+
+
+Alter table loginusuarios
+modify contrasena varchar(50);
