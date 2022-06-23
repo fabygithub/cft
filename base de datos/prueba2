@@ -69,5 +69,7 @@ CREATE TABLE producto(
 	
 	
 
+delete from proveedores 
+where idProveedor = 1;
 
-	
+
