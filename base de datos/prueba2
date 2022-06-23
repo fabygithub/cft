@@ -38,4 +38,12 @@ insert into producto values
 		(1,1,'tecl','teclado negro',100,2000);
 		
 		
-		
+select * from producto;	
+
+Alter table producto 
+modify codigo varchar(30);
+
+
+
+
+
