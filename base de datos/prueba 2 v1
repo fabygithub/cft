@@ -39,7 +39,7 @@ select * from tipoProducto where nombre like '%te%';*/
 Alter table tipoproducto 
 modify nombre varchar(30);
 
-Update tipoprodructo set nombre = 'teclado2' 
+Update tipoproducto set nombre = 'teclado2' 
 where idTipoProducto = "1";
 
 delete from tipoproducto 
