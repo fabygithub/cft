@@ -201,3 +201,18 @@ from loginusuarios
 where usuario = 'Fernando'
 and contrasena = MD5('HOLA');
 
+
+DROP table if exists loginUsuarios;
+create table loginUsuarios(
+	usuario varchar(30) primary key,
+    contrasena varchar(40),
+    metodo varchar(50));
+    
+    
+
+Update loginusuarios set contrasena = 'teclado222' 
+where usuario = "Alfredo";
+
+
+Alter table loginusuarios
+modify contrasena varchar(50);
