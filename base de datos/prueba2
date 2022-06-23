@@ -12,6 +12,10 @@ select * from tipoproducto;
 Alter table tipoproducto 
 modify nombre varchar(30);
 
+
+delete from tipoproducto 
+where idTipoProducto = 1;
+
 drop table tipoproducto;
 
   
