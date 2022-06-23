@@ -97,3 +97,6 @@ Update loginusuarios set contrasena = 'teclado222'
 where usuario = "Alfredo";
 
 
+Alter table loginusuarios
+modify contrasena varchar(50);
+
