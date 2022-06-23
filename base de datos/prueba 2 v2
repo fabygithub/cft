@@ -161,6 +161,25 @@ describe producto;
 select MD5('HOLA');
 select SHA1('HOLA');
 
+
+delete from proveedores 
+where idProveedor = 1;
+
+drop table if exists proveedores;
+create table proveedores(
+idproveedor int primary key auto_increment not null,
+nombrecompañia varchar(40) not null,
+nombre varchar(20) not null,
+apellido varchar(20) not null,
+cargo varchar(40) not null,
+direccion varchar(40) not null,
+ciudad varchar(40) not null,
+region varchar(60) not null,
+telefono varchar(15) not null);
+
+
+
+
 DROP table if exists loginUsuarios;
 create table loginUsuarios(
 	usuario varchar(30) primary key,
