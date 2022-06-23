@@ -34,25 +34,6 @@ select * from tipoProducto where nombre = 'teclado';
 select * from tipoProducto where idTipoProducto between 2 and 4;
 select * from tipoProducto where nombre like '%te%';*/
 
-
-
-Alter table tipoproducto 
-modify nombre varchar(30);
-
-Update tipoproducto set nombre = 'teclado2' 
-where idTipoProducto = "1";
-
-delete from tipoproducto 
-where idTipoProducto = 1;
-
-drop table if exists tipoproducto;
-CREATE TABLE tipoProducto(
-	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
-	Nombre varchar(20));
-
-
-
-
 insert into producto values
 		(1,1,'tecl','teclado negro',100,2000),
         (null,5,'mo','mouse negro',100,2000),
@@ -93,27 +74,6 @@ alter table producto add total int;
 update producto set total=iva+subtotal;
 
 
-Update producto set codigo = 'teclado22' 
-where idProducto = "1";
-
-
-delete from producto 
-where idProducto = 1;
-
-
-drop table if exists producto;
-CREATE TABLE producto(
-	idProducto int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-		idTipoProducto int not null,
-		codigo varchar(20) not null,
-        descripcion varchar(50),
-        cantidad int,
-        precio int,
-        foreign key(idTipoProducto) references tipoProducto(idTipoProducto));
-	
-
-
-
 create table proveedores(
 idproveedor int primary key auto_increment not null,
 nombrecompañia varchar(40) not null,
@@ -152,9 +112,6 @@ describe producto;
 select MD5('HOLA');
 select SHA1('HOLA');
 
-
-
-
 DROP table if exists loginUsuarios;
 create table loginUsuarios(
 	usuario varchar(30) primary key,
@@ -175,12 +132,3 @@ Select *
 from loginusuarios
 where usuario = 'Fernando'
 and contrasena = MD5('HOLA');
-
-Update loginusuarios set contrasena = 'teclado222' 
-where usuario = "Alfredo";
-
-
-Alter table loginusuarios
-modify contrasena varchar(50);
-
-
