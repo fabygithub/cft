@@ -22,7 +22,8 @@ insert into tipoProducto values
 	(null,'tablet'),
 	(null,'notebook');
 
-/*select * from tipoProducto;
+select * from tipoProducto;
+/*
 select nombre from tipoProducto;
 SELECT	nombre, idTipoProducto From tipoProducto;
 SELECT	nombre as Nombre, idTipoProducto as "ID de Producto" From tipoProducto;
@@ -33,6 +34,23 @@ select * from tipoProducto where idTipoProducto =1;
 select * from tipoProducto where nombre = 'teclado';
 select * from tipoProducto where idTipoProducto between 2 and 4;
 select * from tipoProducto where nombre like '%te%';*/
+
+
+Alter table tipoproducto 
+modify nombre varchar(30);
+
+Update tipoproducto set nombre = 'teclado2' 
+where idTipoProducto = "1";
+
+delete from tipoproducto 
+where idTipoProducto = 1;
+
+drop table if exists tipoproducto;
+CREATE TABLE tipoProducto(
+	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
+	Nombre varchar(20));
+
+
 
 insert into producto values
 		(1,1,'tecl','teclado negro',100,2000),
