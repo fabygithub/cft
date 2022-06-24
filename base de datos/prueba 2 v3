@@ -75,9 +75,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre
 END$$
 
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_leerTipoproducto` (IN `pedirNombre` VARCHAR(20))  BEGIN
-	SELECT * FROM tipoproducto
-END$$
 
 
 
