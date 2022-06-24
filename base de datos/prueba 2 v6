@@ -148,6 +148,11 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `pedirNomb
     WHERE nombre = pedirNombre;
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
+	Update tipoproducto set nombre = 'teclado2' 
+        where idTipoProducto = "1";
+END$$
+
 
 DELIMITER //
 DROP PROCEDURE if EXISTS SP_nombre_consultar // 
@@ -162,7 +167,4 @@ END;
 //
 CALL SP_nombre_consultar('pc');
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
-	Update tipoproducto set nombre = 'teclado2' 
-        where idTipoProducto = "1";
-END$$
+
