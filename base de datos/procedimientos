@@ -345,4 +345,25 @@ INSERT INTO `proveedores`(`idproveedor`, `nombrecompañia`, `nombre`, `apellido`
 use tienda;
 CALL SP_agregarProveedor(null,'cooa s.a','rge','jas','oveedor','daanncia','iago','ion metropolitana','545','lkj');
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProveedor` 
+(
+iN `idproveedor` int,
+iN `nombrecompañia` varchar(40),
+iN `nombre` varchar(20),    
+in `apellido` varchar(20), 
+in `cargo` varchar(40),
+in `ciudad` varchar(40),
+in `region` varchar(60),
+in `telefono` varchar(15)
+)
+
+BEGIN
+        INSERT INTO producto VALUES(idproveedor,nombrecompañia,nombre,apellido,cargo,ciudad,region,telefono,ciudad);
+        SELECT * from producto;
+END$$
+
+CALL SP_agregarProveedor(null,'lala','asd','as','mo','mouse','negro','100','2000','12');
+
+
+
 */
