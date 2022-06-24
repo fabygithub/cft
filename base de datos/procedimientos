@@ -12,7 +12,7 @@ END$$
 CALL SP_agregarTipoProducto('pc55');
 
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `pedirNombre` VARCHAR(20))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `nombre` VARCHAR(20))  BEGIN
 	SELECT * FROM tipoproducto
     WHERE nombre = 'pc';
 END$$
