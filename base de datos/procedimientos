@@ -48,18 +48,20 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_consultarProducto` (IN `descripc
 END$$
 
 
+use tienda;
 DELIMITER $$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `nombre` VARCHAR(20))  BEGIN
-	INSERT INTO producto VALUES('juanka');
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `codigo` VARCHAR(20),descripcion varchar(50), cantidad int ,precio int)  BEGIN
+	INSERT INTO producto VALUES('juanka','pepe',12,12);
     SELECT * from producto;
 END$$
 
 
 
-CALL SP_agregarProducto('juanka');
+CALL SP_agregarProducto('juanka',12,12);
 
-
+use tienda;
+drop PROCEDURE SP_agregarProducto;
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarProducto` (IN `cantidad` int)  BEGIN
