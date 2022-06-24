@@ -1,3 +1,5 @@
+
+
 DELIMITER $$
 --
 -- Procedimientos
@@ -31,3 +33,17 @@ BEGIN
 END;
 //
 CALL SP_nombre_consultar('pc');
+
+
+use tienda;
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `nombre` VARCHAR(20))  BEGIN
+	INSERT INTO producto VALUES (null,2,'playstation','computador msi',5,6000);
+    SELECT "El producto fue agregado correctamente" AS Resultado;
+END$$
+
+drop PROCEDURE SP_agregarProducto;
