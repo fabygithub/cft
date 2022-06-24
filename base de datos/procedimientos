@@ -88,25 +88,30 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_consultarProveedor` (IN `nombre`
 END$$
 
 
+use tienda;
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProveedor` 
 (
 iN `idproveedor` int,
 iN `nombrecompañia` varchar(40),
 iN `nombre` varchar(20),    
-iN `codigo` VARCHAR(20),
+iN `direccion` VARCHAR(40),
 in `apellido` varchar(20), 
 in `cargo` varchar(40),
-in `direccion` varchar(40),
 in `ciudad` varchar(40),
 in `region` varchar(60),
 in `telefono` varchar(15)
 )
 
+
+
 BEGIN
-        INSERT INTO proveedores VALUES(idproveedor,nombrecompañia,nombre,codigo,apellido,cargo,direccion,ciudad,
+        INSERT INTO proveedores VALUES(idproveedor,nombrecompañia,nombre,apellido,cargo,direccion,ciudad,
                                    region,telefono);
         SELECT * from proveedores;
 END$$
+
+
 
 
 
@@ -351,6 +356,7 @@ iN `idproveedor` int,
 iN `nombrecompañia` varchar(40),
 iN `nombre` varchar(20),    
 in `apellido` varchar(20), 
+in `direccion` varchar(40), 
 in `cargo` varchar(40),
 in `ciudad` varchar(40),
 in `region` varchar(60),
@@ -358,9 +364,10 @@ in `telefono` varchar(15)
 )
 
 BEGIN
-        INSERT INTO producto VALUES(idproveedor,nombrecompañia,nombre,apellido,cargo,ciudad,region,telefono,ciudad);
+        INSERT INTO producto VALUES(idproveedor,nombrecompañia,direccion,nombre,apellido,cargo,ciudad,region,telefono);
         SELECT * from producto;
 END$$
+
 
 CALL SP_agregarProveedor(null,'lala','asd','as','mo','mouse','negro','100','2000','12');
 
