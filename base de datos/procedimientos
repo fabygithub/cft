@@ -24,7 +24,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarTipoProducto` (IN `nom
         where nombre = 'pc';
 END$$
 
-call SP_actualizarTipoProducto(pc)
+call SP_actualizarTipoProducto('pc');
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_eliminarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
 	DELETE FROM `tipoproducto` WHERE idTipoProducto = 1;
