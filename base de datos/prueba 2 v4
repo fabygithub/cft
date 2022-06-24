@@ -217,3 +217,14 @@ where usuario = "Alfredo";
 
 Alter table loginusuarios
 modify contrasena varchar(50);
+
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
+	INSERT INTO tipoproducto VALUES(null, nombre);
+    SELECT "El cliente fue agregado correctamente" AS Resultado;
+END$$
+
