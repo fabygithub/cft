@@ -48,12 +48,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_consultarProducto` (IN `descripc
 END$$
 
 
+DELIMITER $$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `nombre` VARCHAR(20))  BEGIN
-	INSERT INTO tipoproducto VALUES('juanka');
+	INSERT INTO producto VALUES('juanka');
     SELECT * from producto;
 END$$
 
 
+
+CALL SP_agregarProducto('juanka');
 
 
 
