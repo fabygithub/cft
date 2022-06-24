@@ -228,3 +228,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre
     SELECT "El cliente fue agregado correctamente" AS Resultado;
 END$$
 
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `pedirNombre` VARCHAR(20))  BEGIN
+	SELECT * FROM tipoproducto
+    WHERE nombre = pedirNombre;
+END$$
+
+
