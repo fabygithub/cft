@@ -103,10 +103,11 @@ in `telefono` varchar(15)
 )
 
 BEGIN
-        INSERT INTO producto VALUES(idproveedor,nombrecompañia,nombre,codigo,apellido,cargo,direccion,ciudad,
+        INSERT INTO proveedores VALUES(idproveedor,nombrecompañia,nombre,codigo,apellido,cargo,direccion,ciudad,
                                    region,telefono);
-        SELECT * from producto;
+        SELECT * from proveedores;
 END$$
+
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarProveedor` (IN `nombre` VARCHAR (20))  BEGIN
@@ -339,5 +340,9 @@ use tienda;
 drop PROCEDURE SP_actualizarProducto;
 
 INSERT INTO `proveedores`(`idproveedor`, `nombrecompañia`, `nombre`, `apellido`, `cargo`, `direccion`, `ciudad`, `region`, `telefono`) VALUES (null,'comoa s.a','orge','ojas','roveedor','vdaanncia','tiago','gion metropolitana','6545');                                                    
+
+
+use tienda;
+CALL SP_agregarProveedor(null,'cooa s.a','rge','jas','oveedor','daanncia','iago','ion metropolitana','545','lkj');
 
 */
