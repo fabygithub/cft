@@ -17,6 +17,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `pedirNomb
     WHERE nombre = 'pc';
 END$$
 
+CALL SP_nombre_consultar('pc');
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
 	Update tipoproducto set nombre = 'teclado2' 
         where nombre = 'pc';
@@ -31,26 +33,41 @@ END$$
 CALL SP_eliminarTipoProducto(1);
 
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `descripcion` VARCHAR(20),cantidad int,precio int)  BEGIN
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_crearTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
+        drop  table if exists tipoproducto;
+	CREATE TABLE tipoProducto(
+	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
+	Nombre varchar(20));
+END$$
+
+CALL SP_crearTipoProducto(1);
+
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_consultarProducto` (IN `descripcion` VARCHAR(20),cantidad int,precio int)  BEGIN
     SELECT * from producto;
 END$$
 
-CALL SP_agregarProducto('pc',2,400);
+CALL SP_consultarProducto('pc',2,400);
 
 
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProveedor` (IN `nombre` VARCHAR(20))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_consultarProveedor` (IN `nombre` VARCHAR(20))  BEGIN
     SELECT * from proveedores;
 END$$
 
-CALL SP_agregarProveedor('pc');
+CALL SP_consultarProveedor('pc');
 
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarLogin` (IN `contrasena` VARCHAR(40))  BEGIN
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_consultarLogin` (IN `contrasena` VARCHAR(40))  BEGIN
     SELECT * from loginusuarios;
 END$$
 
-CALL SP_agregarLogin('pc');
+CALL SP_consultarLogin('pc');
 
 
 
