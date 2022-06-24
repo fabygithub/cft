@@ -316,5 +316,6 @@ NULL
 use tienda;
 drop PROCEDURE SP_actualizarProducto;
 
+INSERT INTO `proveedores`(`idproveedor`, `nombrecompañia`, `nombre`, `apellido`, `cargo`, `direccion`, `ciudad`, `region`, `telefono`) VALUES (null,'comoa s.a','orge','ojas','roveedor','vdaanncia','tiago','gion metropolitana','6545');                                                    
 
 */
