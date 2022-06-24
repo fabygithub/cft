@@ -235,3 +235,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `pedirNomb
 END$$
 
 
+DELIMITER //
+DROP PROCEDURE if EXISTS SP_nombre_consultar // 
+CREATE PROCEDURE SP_nombre_consultar
+(
+  IN pedirNombre varchar(20)
+)
+BEGIN
+  SELECT * FROM tipoproducto
+  WHERE nombre=pedirNombre;
+END;
+//
+CALL SP_nombre_consultar('pc');
+
