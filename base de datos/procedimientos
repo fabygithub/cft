@@ -9,7 +9,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre
     SELECT "El cliente fue agregado correctamente" AS Resultado;
 END$$
 
-CALL SP_agregarTipoProducto('pc55');
+
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `nombre` VARCHAR(20))  BEGIN
@@ -18,6 +18,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `nombre` V
 END$$
 
 CALL SP_nombre_consultar('pc');
+CALL SP_agregarTipoProducto('pc55');
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
 	Update tipoproducto set nombre = 'teclado2' 
