@@ -12,13 +12,40 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `pedirNombre` VARCHAR(20))  BEGIN
 	SELECT * FROM tipoproducto
-    WHERE nombre = pedirNombre;
+    WHERE nombre = 'pc';
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
 	Update tipoproducto set nombre = 'teclado2' 
         where idTipoProducto = "1";
 END$$
+
+
+
+use tienda;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `descripcion` VARCHAR(20),cantidad int,precio int)  BEGIN
+    SELECT * from producto;
+END$$
+
+CALL SP_agregarProducto('pc',2,400);
+
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProveedor` (IN `nombre` VARCHAR(20))  BEGIN
+    SELECT * from proveedores;
+END$$
+
+CALL SP_agregarProveedor('pc');
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarLogin` (IN `contrasena` VARCHAR(40))  BEGIN
+    SELECT * from loginusuarios;
+END$$
+
+CALL SP_agregarLogin('pc');
+
 
 
 DELIMITER //
@@ -35,20 +62,12 @@ END;
 CALL SP_nombre_consultar('pc');
 
 
-use tienda;
 
-DELIMITER $$
---
--- Procedimientos
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `nombre` VARCHAR(20))  BEGIN
-	INSERT INTO producto VALUES (null,2,'playstation','computador msi',5,6000);
-    SELECT "El producto fue agregado correctamente" AS Resultado;
-END$$
+/*
+use tienda;
+drop PROCEDURE SP_ActualizarTipoProducto;
 
 drop PROCEDURE SP_agregarProducto;
-
-
 
 
 use tienda;
@@ -60,31 +79,6 @@ END$$
 
 CALL SP_agregarProducto('pc',2,400);
 
-
-
-use tienda;
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProveedor` (IN `nombre` VARCHAR(20))  BEGIN
-    SELECT * from proveedores;
-END$$
-
-CALL SP_agregarProveedor('pc');
-
 use tienda;
 drop PROCEDURE SP_agregarLogin;
-
-use tienda;
-
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarLogin` (IN `contrasena` VARCHAR(40))  BEGIN
-    SELECT * from loginusuarios;
-END$$
-
-CALL SP_agregarLogin('pc');
-
-
-
-
-use tienda;
-drop PROCEDURE SP_ActualizarTipoProducto;
+*/
