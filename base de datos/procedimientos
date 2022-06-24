@@ -47,3 +47,27 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `nombre` VA
 END$$
 
 drop PROCEDURE SP_agregarProducto;
+
+
+
+
+use tienda;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `descripcion` VARCHAR(20),cantidad int,precio int)  BEGIN
+    SELECT "El producto fue agregado correctamente" AS Resultado;
+END$$
+
+CALL SP_agregarProducto('pc',2,400);
+
+
+
+use tienda;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProveedor` (IN `nombre` VARCHAR(20))  BEGIN
+    SELECT * from proveedor;
+END$$
+
+CALL SP_agregarProveedor('pc');
+
