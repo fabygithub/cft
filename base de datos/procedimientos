@@ -275,7 +275,7 @@ BEGIN
         SELECT * from producto;
 END$$
 
-CALL SP_agregarloginusuario(null,'lala','asd');
+CALL SP_agregarloginusuario('assss','lala','asd');
 
 
 
