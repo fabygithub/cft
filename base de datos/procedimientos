@@ -48,6 +48,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_consultarProducto` (IN `descripc
 END$$
 
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `nombre` VARCHAR(20))  BEGIN
+	INSERT INTO tipoproducto VALUES('juanka');
+    SELECT * from producto;
+END$$
+
+
+
+
+
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarProducto` (IN `cantidad` int)  BEGIN
     Update producto set cantidad = 120 
     where cantidad = 100;
@@ -93,6 +103,7 @@ CALL SP_crearTipoProducto(1);
 
 
 CALL SP_consultarProducto('pc',2,400);
+CALL SP_agregarProducto('juanka');
 call SP_actualizarProducto(100);
 
 CALL SP_consultarProveedor('pc');
