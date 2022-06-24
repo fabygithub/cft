@@ -73,12 +73,6 @@ END$$
 
 
 
-CALL SP_agregarProducto(null,3,7,5,'mo','mouse negro',100,2000,12,2);
-
-
-
-use tienda;
-drop PROCEDURE SP_agregarProducto;
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarProducto` (IN `cantidad` int)  BEGIN
@@ -126,7 +120,7 @@ CALL SP_crearTipoProducto(1);
 
 
 CALL SP_consultarProducto('pc',2,400);
-CALL SP_agregarProducto('juanka');
+CALL SP_agregarProducto(null,3,7,5,'mo','mouse negro',100,2000,12,2);
 call SP_actualizarProducto(100);
 
 CALL SP_consultarProveedor('pc');
@@ -153,6 +147,10 @@ CALL SP_nombre_consultar('pc');
 
 
 /*
+
+use tienda;
+drop PROCEDURE SP_agregarProducto;
+
 use tienda;
 drop PROCEDURE SP_ActualizarTipoProducto;
 
