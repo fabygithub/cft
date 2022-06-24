@@ -66,6 +66,20 @@ CREATE TABLE producto(
         foreign key(idTipoProducto) references tipoProducto(idTipoProducto));
 
 
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
+	INSERT INTO tipoproducto VALUES(null, nombre);
+END$$
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_leerTipoproducto` (IN `pedirNombre` VARCHAR(20))  BEGIN
+	SELECT * FROM tipoproducto
+END$$
+
+
 
 
 insert into producto values
@@ -118,7 +132,6 @@ where idProducto = "1";
 
 delete from producto 
 where idProducto = 1;
-
 
 
 
@@ -176,6 +189,8 @@ direccion varchar(40) not null,
 ciudad varchar(40) not null,
 region varchar(60) not null,
 telefono varchar(15) not null);
+
+
 
 
 
