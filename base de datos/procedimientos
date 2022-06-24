@@ -51,14 +51,25 @@ END$$
 use tienda;
 DELIMITER $$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `codigo` VARCHAR(20),descripcion varchar(50), cantidad int ,precio int)  BEGIN
-	INSERT INTO producto VALUES('juanka','pepe',12,12);
-    SELECT * from producto;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` 
+(
+iN `codigo` VARCHAR(20),
+in `descripcion` varchar(50), 
+in `cantidad` int ,
+in `precio` int,
+in `subtotal` int,
+in `iva` double,
+in `total` int
+)
+
+BEGIN
+        SELECT * from producto;
 END$$
 
 
+CALL SP_agregarProducto(null,5,'mo','mouse negro',100,2000,12);
 
-CALL SP_agregarProducto('juanka',12,12);
+
 
 use tienda;
 drop PROCEDURE SP_agregarProducto;
