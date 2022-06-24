@@ -1,7 +1,7 @@
 create database tienda;
 
 Use tienda;
-SET foreign_key_checks = 1
+
 
 CREATE TABLE tipoProducto(
 	idTipoProducto int PRIMARY KEY AUTO_INCREMENT not null,
