@@ -66,8 +66,25 @@ use tienda;
 
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProveedor` (IN `nombre` VARCHAR(20))  BEGIN
-    SELECT * from proveedor;
+    SELECT * from proveedores;
 END$$
 
 CALL SP_agregarProveedor('pc');
 
+use tienda;
+drop PROCEDURE SP_agregarLogin;
+
+use tienda;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarLogin` (IN `contrasena` VARCHAR(40))  BEGIN
+    SELECT * from loginusuarios;
+END$$
+
+CALL SP_agregarLogin('pc');
+
+
+
+
+use tienda;
+drop PROCEDURE SP_ActualizarTipoProducto;
