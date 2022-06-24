@@ -9,6 +9,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoProducto` (IN `nombre
     SELECT "El cliente fue agregado correctamente" AS Resultado;
 END$$
 
+CALL SP_agregarTipoProducto('pc55');
+
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_nombre_consultar` (IN `pedirNombre` VARCHAR(20))  BEGIN
 	SELECT * FROM tipoproducto
@@ -17,14 +19,18 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_actualizarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
 	Update tipoproducto set nombre = 'teclado2' 
-        where idTipoProducto = "1";
+        where nombre = 'pc';
 END$$
 
+call SP_actualizarTipoProducto(pc)
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_eliminarTipoProducto` (IN `nombre` VARCHAR(20))  BEGIN
+	DELETE FROM `tipoproducto` WHERE idTipoProducto = 1;
+END$$
+
+CALL SP_eliminarTipoProducto(1);
 
 
-use tienda;
-
-DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` (IN `descripcion` VARCHAR(20),cantidad int,precio int)  BEGIN
     SELECT * from producto;
 END$$
