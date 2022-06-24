@@ -53,6 +53,9 @@ DELIMITER $$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarProducto` 
 (
+iN `idProducto` int,
+iN `idProveedor` int,
+iN `idTipoProducto` int,    
 iN `codigo` VARCHAR(20),
 in `descripcion` varchar(50), 
 in `cantidad` int ,
@@ -63,11 +66,14 @@ in `total` int
 )
 
 BEGIN
+        INSERT INTO producto VALUES(idProducto,idProveedor,idTipoProducto,codigo,descripcion,cantidad,precio,subtotal,
+                                   iva,total);
         SELECT * from producto;
 END$$
 
 
-CALL SP_agregarProducto(null,5,'mo','mouse negro',100,2000,12);
+
+CALL SP_agregarProducto(null,3,7,5,'mo','mouse negro',100,2000,12,2);
 
 
 
