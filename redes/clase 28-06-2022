@@ -24,5 +24,9 @@ redes de computadores y un switch 2450-24
           
           
          
+ ping 192.168.2.11
+ ping 192.168.2.11
          
-         
+solo activado dhcp
+en filtros
+
