@@ -12,3 +12,11 @@ la primary y la foreign
 
 
 INSERT INTO `territorios` VALUES ('01581','Westboro',2);
+
+te dice la columna es enviadiovia
+
+#1452 - Cannot add or update a child row: a foreign key constraint fails (`diagnostico2022_1`.`pedidos`, CONSTRAINT `FK_pedidos_ViaEmbarcacion` 
+FOREIGN KEY (`EnviadoVia`) REFERENCES `companiasenvio` (`IdCompaniaEnvio`))
+
+esta mala la columna enviadovia
+
