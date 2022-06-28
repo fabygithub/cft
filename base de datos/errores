@@ -1,0 +1,8 @@
+#1005 - No puedo crear tabla `diagnostico2022_1`.`pedidos` (Error: 150 "Foreign key constraint is incorrectly formed") (Detalles…)
+
+no esta la tabla empleado
+
+#1452 - Cannot add or update a child row: a foreign key constraint fails (`diagnostico2022_1`.`empleados`, CONSTRAINT `FK_empleados_reports_to` FOREIGN KEY (`Jefe`) REFERENCES `empleados` (`IdEmpleado`))
+
+no se puede agregar primero en tabla hija
+
