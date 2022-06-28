@@ -6,3 +6,9 @@ no esta la tabla empleado
 
 no se puede agregar primero en tabla hija
 
+y tienen que tener el mismo valor
+la primary y la foreign 
+
+
+
+INSERT INTO `territorios` VALUES ('01581','Westboro',2);
