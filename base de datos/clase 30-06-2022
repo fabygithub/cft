@@ -164,12 +164,11 @@ SELECT
 power(2,3)AS 'Elevado con Power',
 pow(2,3) AS 'Elevado con Pow',
 pi() as PI,
-round(4,6245) as redondeo,
-round(4,6245,3) AS 'Redondeo con decimales',
+round(4.6245) as redondeo,
+round(4.6245,3) AS 'Redondeo con decimales',
 TRUNCATE(4.6245,3) AS 'Redondeo con truncate',
 ceil(4.6245) as 'Redondeo hacia arriba',
 floor(4.6245) as 'Redondeo hacia abajo';
-
 
 
 
