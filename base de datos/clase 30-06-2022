@@ -1,0 +1,53 @@
+/*DEBE COMENTAR*/
+
+INSERT INTO concatos VALUES
+(null,'Ana',Jorquera,'a@gmail.com'),
+(null,'Adrian','Rojas','ad@gmail.com')
+(null,'Ismael','Rodriguez','ir@gmail.com')
+
+/* DEBE COMENTAR */
+
+SELECT concat(nombre,"",apellido) AS 'Nombre completo' from concatos
+/*DEBE COMENTAR*/
+
+SELECT contact_ws(',',nombre, apellido)from contactos
+/*DEBE COMENTAR*/
+
+SELECT contact_ws('',nombre,apellido) from contactos
+/*DEBE COMENTAR*/
+
+SELECT GROUP_CONCAT(nombre) from contactos
+/*DEBE COMENTAR*/
+
+SELECT nombre,GROUP_CONTACT(nombre SEPARATOR '/')FROM contactos
+/* LENGTH(LAS Ñ Y LOS ACENTOS LOS CUENTA POR DOS CARACTERES*/
+
+SELECT  nombre, length(nombre) AS LARGO FROM contactos ORDER BY largo DESC;
+/*CHAR_LENGTH(LAS Ñ Y LOS ACENTOS LOS CUENTA POR UN CARACTER)*/
+
+SELECT nombre,CHAR_length(nombre) AS LARGO FROM contactos ORDER BY largo DESC;
+
+/*DEBE COMENTAR*/
+
+SELECT nombre,LEFT(nombre,3)AS '3 desde la izquierda',RIGHT(nombre,3)AS '3 desde la
+derecha',mid(nombre,2,3)as 'comienza en el 2 y cuenta 3' FROM usuario order BY nombre DESC;
+
+
+/* DEBE COMENTAR */
+
+SELECT LOCATE('na','fernando');
+
+/*DEBE COMENTAR*/
+
+SELECT nombre,LOCATE('na',nombre)from contactos:
+
+/*DEBE COMENTAR*/
+
+SELECT nombre,upper(nombre)AS 'Nombre en mayuscula',apellido,upper(apellido)AS'Apellido'
+en mayuscula' from contactos
+
+
+
+
+
+
