@@ -1,9 +1,9 @@
 /*DEBE COMENTAR*/
 
-INSERT INTO concatos VALUES
-(null,'Ana',Jorquera,'a@gmail.com'),
+INSERT INTO contactos VALUES
+(null,'Ana','Jorquera,'a@gmail.com'),
 (null,'Adrian','Rojas','ad@gmail.com')
-(null,'Ismael','Rodriguez','ir@gmail.com')
+(null,'Ismael','Rodriguez','ir@gmail.com');
 
 /* DEBE COMENTAR */
 
