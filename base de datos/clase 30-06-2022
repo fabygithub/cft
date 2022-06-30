@@ -1,52 +1,150 @@
 /*DEBE COMENTAR*/
+/*DEBE COMENTAR*/
+/* no exista la tabla contactos*/
 
-INSERT INTO contactos VALUES
-(null,'Ana','Jorquera,'a@gmail.com'),
-(null,'Adrian','Rojas','ad@gmail.com')
+CREATE TABLE contactos
+    (
+    IdContacto int null,
+    nombre VARCHAR(20),
+    apellido VARCHAR(40),
+    correo VARCHAR(20),
+    PRIMARY KEY (IdContacto));
+    
+/* se insertan 3 contactos
+   per hay un error en el insert
+   #1062 - Entrada duplicada '0' para la clave 'PRIMARY'
+*/   
+
+INSERT INTO `contactos` VALUES (1,'Ana','Jorquera','@gmail.com'),
+(2,'Adrian','Rojas','ad@gmail.com'),
+(3,'Ismael','Rodriguez','ir@gmail.com');
+
+INSERT INTO `contactos` VALUES (null,'Ana','Jorquera','@gmail.com'),
+(null,'Adrian','Rojas','ad@gmail.com'),
 (null,'Ismael','Rodriguez','ir@gmail.com');
 
 /* DEBE COMENTAR */
+/* se selecciona el nombre y el apellido 
+con la variable nombre completo
+AnaJorquera */
 
-SELECT concat(nombre,"",apellido) AS 'Nombre completo' from concatos
-/*DEBE COMENTAR*/
+SELECT concat(nombre,"",apellido) AS 'Nombre completo' from contactos;
+
+
+
+/*DEBE COMENTAR
+se selecciona el nombre y apellido
+#1305 - FUNCTION diagnostico2022_1.contact_ws does not exist
+SELECT (',',nombre, apellido)from contactos LIMIT 0, 25
+#1241 - Operando debe tener 1 columna(s)
+*/
+
+
+SELECT (nombre)from contactos
+
 
 SELECT contact_ws(',',nombre, apellido)from contactos
-/*DEBE COMENTAR*/
+
+/*DEBE COMENTAR
+#1305 - FUNCTION diagnostico2022_1.contact_ws does not exist
+habria que crear la funcion
+SELECT IdContacto,nombre,apellido from contactos
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_agregarTipoCategoria` (IN `nombre` VARCHAR(20))  BEGIN
+	INSERT INTO categorias VALUES ('','Bebidas','Gaseosas, café, té, cervezas y maltas','gif.jpg');
+
+    SELECT "la categoria fue agregada correctamente" AS Resultado;
+END$$
+*/
+
+/*DEBE COMENTAR
+#1305 - FUNCTION diagnostico2022_1.contact_ws does not exist
+habria que crear la funcion
+SELECT IdContacto,nombre,apellido from contactos
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_contact_ws`
+
+(IN `nombre` VARCHAR(20)) BEGIN
+	
+SELECT IdContacto,nombre,apellido from contactos;
+ 
+END$$
+*/
 
 SELECT contact_ws('',nombre,apellido) from contactos
-/*DEBE COMENTAR*/
+
+
+/*DEBE COMENTAR
+SE AGRUPA Y SE JUNTAN LOS NOMBRES*/
+
 
 SELECT GROUP_CONCAT(nombre) from contactos
-/*DEBE COMENTAR*/
+
 
 SELECT nombre,GROUP_CONTACT(nombre SEPARATOR '/')FROM contactos
+/* LENGTH(LAS Ñ Y LOS ACENTOS LOS CUENTA POR DOS CARACTERES
+SELECT IdContacto,GROUP_CONCAT(nombre SEPARATOR '/')
+FROM contactos;
 /* LENGTH(LAS Ñ Y LOS ACENTOS LOS CUENTA POR DOS CARACTERES*/
 
+*/
+
 SELECT  nombre, length(nombre) AS LARGO FROM contactos ORDER BY largo DESC;
-/*CHAR_LENGTH(LAS Ñ Y LOS ACENTOS LOS CUENTA POR UN CARACTER)*/
+/*CHAR_LENGTH(LAS Ñ Y LOS ACENTOS LOS CUENTA POR UN CARACTER)
+se ordena por el largo de la palabra
+*/
 
 SELECT nombre,CHAR_length(nombre) AS LARGO FROM contactos ORDER BY largo DESC;
 
-/*DEBE COMENTAR*/
+/*DEBE COMENTAR
+#1146 - Tabla 'diagnostico2022_1.usuario' no existe
+la funciones llamadas cortan las palabras
+*/
 
 SELECT nombre,LEFT(nombre,3)AS '3 desde la izquierda',RIGHT(nombre,3)AS '3 desde la
 derecha',mid(nombre,2,3)as 'comienza en el 2 y cuenta 3' FROM usuario order BY nombre DESC;
 
 
-/* DEBE COMENTAR */
+/* DEBE COMENTAR 
+se selecciono al usuario local
+*/
 
 SELECT LOCATE('na','fernando');
 
-/*DEBE COMENTAR*/
+/*DEBE COMENTAR*
+se selecciona nombre local
+#1064 - Algo está equivocado en su sintax cerca ':
+se selecciona la palabra terminada con na
+/*
 
-SELECT nombre,LOCATE('na',nombre)from contactos:
+SELECT nombre,LOCATE('na',nombre)from contactos;
 
-/*DEBE COMENTAR*/
+/*DEBE COMENTAR
+pasa el nombre y apellido 
+a mayuscula
+*/
+
+SELECT nombre,upper(nombre)AS 'Nombre en mayuscula',apellido,upper(apellido)AS'Apellido'
+
+from contactos;
+
 
 SELECT nombre,upper(nombre)AS 'Nombre en mayuscula',apellido,upper(apellido)AS'Apellido'
 en mayuscula' from contactos
 
-/* DEBE COMENTAR*/
+
+
+/* DEBE COMENTAR
+lo pasa a minuscula
+*/
 
 select nombre,lower(nombre) AS'Nombre en minuscula',apellido,lower(apellido)AS'Apellido'
 en minuscula' FROM contactos
@@ -59,7 +157,7 @@ SELECT
 3-1 as resta,
 4*2 as multiplicacion,
 10/2 AS division,
-10 DIV 2 AS 'division con DIV'
+10 DIV 2 AS 'division con DIV',
 9%2 AS resto,
 9 MOD 2 AS 'Resto con MOD',
 2*2*2 as elevado,
@@ -70,7 +168,7 @@ round(4,6245) as redondeo,
 round(4,6245,3) AS 'Redondeo con decimales',
 TRUNCATE(4.6245,3) AS 'Redondeo con truncate',
 ceil(4.6245) as 'Redondeo hacia arriba',
-floor(4.6245) as 'Redondeo hacia abajo',
+floor(4.6245) as 'Redondeo hacia abajo';
 
 
 
