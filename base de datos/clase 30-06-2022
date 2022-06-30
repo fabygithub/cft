@@ -46,6 +46,45 @@ SELECT nombre,LOCATE('na',nombre)from contactos:
 SELECT nombre,upper(nombre)AS 'Nombre en mayuscula',apellido,upper(apellido)AS'Apellido'
 en mayuscula' from contactos
 
+/* DEBE COMENTAR*/
+
+select nombre,lower(nombre) AS'Nombre en minuscula',apellido,lower(apellido)AS'Apellido'
+en minuscula' FROM contactos
+
+/*Operaciones matematicas con funciones*/
+
+SELECT
+
+2+3 as suma,
+3-1 as resta,
+4*2 as multiplicacion,
+10/2 AS division,
+10 DIV 2 AS 'division con DIV'
+9%2 AS resto,
+9 MOD 2 AS 'Resto con MOD',
+2*2*2 as elevado,
+power(2,3)AS 'Elevado con Power',
+pow(2,3) AS 'Elevado con Pow',
+pi() as PI,
+round(4,6245) as redondeo,
+round(4,6245,3) AS 'Redondeo con decimales',
+TRUNCATE(4.6245,3) AS 'Redondeo con truncate',
+ceil(4.6245) as 'Redondeo hacia arriba',
+floor(4.6245) as 'Redondeo hacia abajo',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
