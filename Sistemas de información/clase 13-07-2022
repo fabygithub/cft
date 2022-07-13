@@ -1,0 +1,129 @@
+modelo entidad relacion
+entidad relacion 
+atributo
+
+modelo relacional 
+tabla  relacion  
+campo
+registro
+tipo datos
+
+cliente      1 a m       factura   m a m      productos    
+ 
+nombre                  folio                  codigo 
+apellido                cliente                descripcion
+direccion               prdocuto               precio
+telefono
+correo
+id comuna -val
+
+1
+
+
+m
+
+comuna
+id comuna
+direccion
+
+
+
+
+cliente varias facturas
+una factura a 1 cliente
+
+factura varios productos
+productos varias facturas
+
+
+dominio
+facura folio
+
+
+identificador unico 
+patente
+rut
+folio
+codigo
+
+
+clientes                      pedidos
+codigo cliente                codigo pedido
+
+
+
+proovedor
+* codigo
+  nombre
+m                      a               m
+
+
+factura    m  1   cliente               producto
+*n factura        *rut                  *codigo
+cliente           nombre                tipo producucto
+producto          apellidos             descripcion
+                                         precio
+   m               a       m              stock
+
+
+
+
+factura
+cod factura
+cod cliente
+cod producto
+cod detalle
+
+
+detalle factura
+cod detalle
+cod producto
+
+
+producto
+cod prod
+descrip
+tipo
+precio
+
+
+analisis streaming
+funcionalidades
+dfd
+entidad relacion
+modelo relacional
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
