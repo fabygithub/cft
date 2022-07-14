@@ -1,0 +1,52 @@
+c users
+
+cd xampp/mysql/bin
+
+mysql -u root -p
+
+can't  connect to mysql server on localhost 10001
+
+mysql -u root -p
+Enter password
+
+welcome to mariadb monitor
+
+your maria connection id is 8
+
+server version 10.4.19 mariadb
+
+mariadb [(none)]>
+
+
+
+CREATE DATABASE Asignatura;
+
+USE Asignatura;
+
+DROP TABLE IF EXIST Correo;
+(
+CREATE TABLE Correo
+id_correo INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Constrasena VARCHAR(20) NOT NULL DEFAULT '',
+Nombre_Usuario VARCHAR(25) NOT NULL DEFAULT ''
+);
+
+DROP TABLE IF EXIST Direccion;
+(
+id_direccion INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Nombre_Calle VARCHAR(20) NOT NULL DEFAULT '',
+Nombre_Comuna VARCHAR(25) NOT NULL DEFAULT '',
+Numero_Edificio VARCHAR(5) NOT NULL DEFAULT '',
+Nombre_Ciudad VARCHAR(25) NOT NULL DEFAULT '');
+
+
+
+
+
+
+
+
+
+
+
+
