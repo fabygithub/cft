@@ -52,6 +52,33 @@ id_direccion INT,
 FOREIGN KEY(id_correo) REFERENCES correo(id_correo),
 FOREIGN KEY(id_direccion) REFERENCES direccion(id_direccion));
 
+DROP TABLE IF EXIST Estudiante;
+
+CREATE TABLE Estudiante;
+id_estudiante INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Matricula CHAR(16) NOT NULL DEFAULT '',
+Pagado VARCHAR(45) NOT NUTLL DEFAULT '');
+
+DROP TABLE IF EXISTS Asistencia;
+CREATE TABLE Asistencia(
+id_asistencia INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+Dias_Asistidos VARCHAR(10) NOT NULL DEFAULT '',
+Dias_falta VARCHAR(10) NOT NULL DEFAULT '',
+Asistencia_Alumno VARCHAR(10) NOT NULL DEFAULT '',
+Asistencia_Curso VARCHAR(10) NOT NULL DEFAULT '',
+id_estudiante INT,
+FOREIGN KEY(id_estudiante) REFERENCES estudiante(id_estudiante));
+
+
+
+
+
+
+
+
+
+
+
 
 
 
