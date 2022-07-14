@@ -70,6 +70,26 @@ id_estudiante INT,
 FOREIGN KEY(id_estudiante) REFERENCES estudiante(id_estudiante));
 
 
+DROP TABLE IF EXISTS INSTRUCTOR;
+
+CREATE TABLE instructor(
+id_instructor INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+tarifa INT NOT NULL,
+id_persona INT,
+FOREIGN KEY(id_persona) REFERENCES persona(idPersona));
+
+
+DROP TABLE IF EXISTS materia;
+
+CREATE TABLE materia(
+id_materia CHAR(10) PRIMARY KEY NOT NULL,
+Descripcion VARCHAR(45) NOT NULL DEFAILT '',
+Docentes VARCHAR(45) NOT NULL DEFAULT '');
+
+
+
+
+
 
 
 
