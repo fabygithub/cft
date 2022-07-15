@@ -87,6 +87,48 @@ Descripcion VARCHAR(45) NOT NULL DEFAILT '',
 Docentes VARCHAR(45) NOT NULL DEFAULT '');
 
 
+DROP TABLE IF EXISTS Aula;
+
+CREATE TABLE Aula(
+id_Aula char(10) PRIMARY KEY NOT NULL,
+descripcion VARCHAR(45) NOT NUTLL DEFAULT '',
+capacidad CHAR(10) NOT NULL DEFAULT '');
+
+DROP TABLE IF EXISTS Periodo;
+
+CREATE TABLE Periodo(
+id_periodo CHAR(10) PRIMARY KEY NOT NULL,
+Descripcion VARCHAR(45) NOT NULL DEFAULT '');
+
+DROP TABLE IF EXISTS Nota;
+
+CREATE TABLE nota(
+id_nota INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+grado CHAR(2) NOT NULL DEFAULT '',
+promedio INT NOT NULL,
+id_estudiante INT,
+id_curso INT,
+
+FOREIGN KEY(id_estudiante)REFERENCES estudiante(id_estudiante),
+FOREIGN KEY(id_curso)REFERENCES curso(id_curso);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
