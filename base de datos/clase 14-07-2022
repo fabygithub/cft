@@ -112,6 +112,170 @@ id_curso INT,
 FOREIGN KEY(id_estudiante)REFERENCES estudiante(id_estudiante),
 FOREIGN KEY(id_curso)REFERENCES curso(id_curso);
 
+nombre base de datos 
+
+supermercado 
+
+cotejamiento 
+
+utf8_general_ci
+
+crear
+
+nombre tabla
+
+productos
+numero columnas 5
+
+ID_PRODUCTO    INT       PRIMARY    AUTOINCREMENT
+
+DESCRIPCION    TEXT             
+
+PRECIO         DOUBLE
+
+ID_CATEGORIA   INDEX     NOMBRE INDICE = fkidcategoria
+
+ID_PROOVEDOR   INDEX     NOMBRE INDICE = fkidproovedor
+
+guardar
+
+
+
+CATEGORIAS
+
+ID_CATEGORIA     INT          PRIMARY KEY
+
+DESCRIPCION      VARCHAR      255
+
+
+PROOVEEDORES
+
+ID_PROOVEDOR     INT          255   AUTO INCREMENT
+
+NOMBRE           VARCHAR      255
+
+DIRECCION        VARCHAR      255
+ 
+TELEFONO         VARCHAR      255
+
+
+guardar
+
+
+diseñador
+
+las claves foraneas se marcan con un gato azul
+
+crear relacion
+seleccione la clave referenciada (la clave foranea id_categoria)
+ondelete cascade
+onupdate cascade
+
+ok
+
+seleccione la clave referenciada (la clave foranea id_proveedor)
+
+guardar pagina
+
+esquema relacional
+
+continuar
+
+
+click en la base de datos supermercado
+
+en categorias (tabla padre)
+se insertan primero la claves padre
+
+
+insertar solo la descripcion
+granos continuar
+
+insert into null,grandos (aceptaba null la clave primaria)
+
+
+insertar en prooveedor (clase padre)
+
+insetar nombre = molino del norte s a 
+direccion = venta de arroz norteño muy fino
+telefono = 9283289
+
+continuar
+
+insertar producto (clase hija)
+
+se insertan la
+
+descripcion  =  arroz premiun norteño
+precio       =  5
+
+las foraneas no se insertan (solo se escriben la misma de la padre)
+
+id categoria = granos - 1
+proovedor  = 1 - molinos del norte s a
+
+continuar
+
+si se borra una clase padre por ejemplo (proovedor o producto se borra tambien la hija producto)
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
