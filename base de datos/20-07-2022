@@ -28,6 +28,8 @@ ENGINE = InnoDB;
 
 phpmyadmin clave foranea
 
+crear la tablas sin la clave foranea
+
 
 
 
