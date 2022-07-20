@@ -53,6 +53,14 @@ agregar clave foranea
 
 ALTER TABLE `inventario` ADD `codigoPelicula` INT NOT NULL AFTER `valorVenta`, ADD UNIQUE (`codigoPelicula`);
 
+seleccionar la base de datos
+ir a rutinas
+
+agregar rutina
+nombre rutina consultar_tablas
+
+tipo : procedure
+
 
 
 
