@@ -1,1 +1,32 @@
 new database fabian_cornejo 
+
+inventario 
+
+codigoInven int 11  primary
+codigoPelicula int 11 index fkcodigoPelicula 11
+cantidad int 11
+valorArriendo int 11
+
+CREATE TABLE `fabian_cornejo`.`inventario` 
+(`codigoInven` INT(11) NOT NULL , 
+`codigoPelicula` INT(11) NOT NULL , 
+`cantidad` INT(11) NOT NULL , 
+`valorArriendo` INT(11) NOT NULL , PRIMARY KEY 
+(`codigoInven`(11)), INDEX `fkcodigoPelicula` 
+(`codigoPelicula`(11))) ENGINE = InnoDB;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
