@@ -41,6 +41,11 @@ en la primary key se deja vacio la columna
 inventario estructura 
 agregar una columna
 
+agregar foranea
+el mismo nombre de la primary
+de la otra tabla
+
+en indice elegir
 unique sin nombre
 
 
