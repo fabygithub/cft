@@ -28,7 +28,26 @@ CREATE TABLE `fabian_cornejo`.`inventario`
 PRIMARY KEY (`codigoInven`(11))) ENGINE = InnoDB;
 
 
+CREATE TABLE `fabian_cornejo`.`pelicula` 
+(`codigoPelicula` INT(11) NOT NULL , 
+`titulo` VARCHAR(50) NOT NULL , 
+`duracion` VARCHAR(10) NOT NULL , 
+`descripcion` LONGTEXT NOT NULL , 
+PRIMARY KEY (`codigoPelicula`)) ENGINE = InnoDB;
+
+
 en la primary key se deja vacio la columna
+
+inventario estructura 
+agregar una columna
+
+unique sin nombre
+
+
+agregar clave foranea
+
+ALTER TABLE `inventario` ADD `codigoPelicula` INT NOT NULL AFTER `valorVenta`, ADD UNIQUE (`codigoPelicula`);
+
 
 
 
