@@ -157,6 +157,28 @@ agregar rutina
 tipo 
 funcion
 
+MySQL MAX() Function - W3Schools
+
+
+nombre max_inventario
+tipo function
+parametros cantidad 11
+SELECT MAX(cantidad) AS max_inventario FROM inventario;
+
+la sentencia debe contener un return
+primero hay que declarar un numero
+
+declare numero int;
+
+BEGIN
+DECLARE numero int;
+SELECT MAX(cantidad) INTO numero FROM inventario;
+return numero;
+END
+
+
+
+
 
 
 
