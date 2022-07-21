@@ -1,0 +1,12 @@
+# Listar los nombres de los usuarios
+SELECT nombre FROM tblUsuarios;
+
+# Calcular el saldo máximo de los usuarios de sexo "Mujer"
+SELECT MAX(saldo) FROM tblUsuarios WHERE sexo = 'M';
+
+#Listar nombre y teléfono de los usuarios con teléfono NOKIA, BLACKBERRY o SONY
+SELECT nombre, telefono FROM tblUsuarios WHERE marca IN('NOKIA', 'BLACKBERRY', 'SONY');
+
+#Contar los usuarios sin saldo o inactivos
+SELECT COUNT(*) FROM tblUsuarios WHERE NOT activo OR saldo <= 0;
+
