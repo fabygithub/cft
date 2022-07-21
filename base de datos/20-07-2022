@@ -188,6 +188,27 @@ INTO numero FROM inventario;
 return numero; 
 END
 
+select max mysql routine
+
+DROP FUNCTION `max_inventario`; CREATE DEFINER=`root`@`localhost` FUNCTION `max_inventario`(`cantidad` INT(11)) RETURNS INT(11) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER BEGIN DECLARE numero int; SELECT MAX(cantidad) into numero FROM inventario; return max(cantidad); END
+
+
+mysql stored function
+
+BEGIN
+  RETURN 3*3;
+END
+
+mysql stored function return select result
+
+sin parametros
+
+BEGIN
+  DECLARE numero int; 
+  SELECT max(cantidad)into numero FROM inventario;
+  RETURN numero;
+END
+
 
 
 
