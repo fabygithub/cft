@@ -124,8 +124,11 @@ VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
 
 
 INSERT INTO `inventario`
-(`codigoInven`, `cantidad`, `valorArriendo`, `valorVenta`) 
-VALUES ('codigoInven','cantidad','valorArriendo','valorVenta')
+(codigoInven, cantidad, valorArriendo, valorVenta) 
+VALUES (codigoInven,cantidad,valorArriendo,valorVenta)
+
+se escriben 2 veces la misma columna para agregar el procedimiento
+
 
 
 CREATE PROCEDURE `insertar_tupla`
@@ -139,6 +142,13 @@ INSERT INTO `inventario` (`codigoInven`, `cantidad`, `valorArriendo`, `valorVent
 VALUES ('codigoInven','cantidad','valorArriendo','valorVenta')
 
 
+
+procedimiento insertar
+
+SET @p0='10'; SET @p1='100'; SET @p2='10000'; SET @p3='400'; CALL `insertar_tupla`(@p0, @p1, @p2, @p3);
+
+
+DROP PROCEDURE `insertar_tupla`; CREATE DEFINER=`root`@`localhost` PROCEDURE `insertar_tupla`(IN `codigoInven` INT(11), IN `cantidad` INT(11), IN `valorArriendo` INT(11), IN `valorVenta` INT(11)) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER INSERT INTO `inventario` (`codigoInven`, `cantidad`, `valorArriendo`, `valorVenta`) VALUES (codigoInven,cantidad,valorArriendo,valorVenta)
 
 
 
