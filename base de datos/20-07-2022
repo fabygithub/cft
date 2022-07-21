@@ -152,7 +152,10 @@ DROP PROCEDURE `insertar_tupla`; CREATE DEFINER=`root`@`localhost` PROCEDURE `in
 
 
 
+agregar rutina 
 
+tipo 
+funcion
 
 
 
