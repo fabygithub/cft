@@ -61,6 +61,78 @@ nombre rutina consultar_tablas
 
 tipo : procedure
 
+en in nombrar cualquier columna
+tipo
+longitud
+
+CREATE PROCEDURE `consultar_tablas`(IN `cantidad` INT(11)) 
+NOT DETERMINISTIC CONTAINS SQL SQL SECURITY 
+DEFINER SELECT * from inventario;
+
+rutina ejecutar
+
+SET @p0='10'; CALL `consultar_tablas`(@p0);
+
+insertar cualquer numero para que funciones el procedimiento
+
+se pueden agregar mas parametros
+con agregar parametro
+
+
+INSERT INTO `inventario`
+(`codigoInven`, `cantidad`, `valorArriendo`, `valorVenta`, `codigoPelicula`) 
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
+
+describir la tabla
+
+codigoInven
+int(11)
+NO
+PRI
+NULL
+cantidad
+int(11)
+NO
+NULL
+valorArriendo
+int(11)
+NO
+NULL
+valorVenta
+int(11)
+NO
+NULL
+codigoPelicula
+int(11)
+NO
+UNI
+NULL
+
+
+CREATE PROCEDURE `insertar_tupla`
+(IN `codigoInven` INT(11), 
+IN `cantidad` INT(11), 
+IN `valorArriendo` INT(11), 
+IN `valorVenta` INT(11), 
+IN `codigoPelicula` INT(11)) 
+NOT DETERMINISTIC CONTAINS 
+SQL SQL SECURITY DEFINER 
+INSERT INTO `inventario` 
+(`codigoInven`, `cantidad`, `valorArriendo`, `valorVenta`, `codigoPelicula`) 
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
