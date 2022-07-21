@@ -210,6 +210,15 @@ BEGIN
 END
 
 
+UPDATE `inventario` SET `cantidad`=cantidad WHERE cantidad = 10
+
+CREATE PROCEDURE `actualizar_inventario`(IN `cantidad` INT(11)) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER UPDATE `inventario` SET `cantidad`=cantidad WHERE cantidad = 10
+
+
+stored procedure mysql update example
+
+How can I create a stored procedure to update values in a MySQL table?
+
 
 
 
