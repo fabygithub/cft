@@ -22,7 +22,26 @@ SELECT nivel, COUNT(*) FROM tblUsuarios GROUP BY nivel;
 #Listar el login de los usuarios con nivel 2
 SELECT usuario FROM tblUsuarios WHERE nivel = 2;
 
-
-
 https://parzibyte.me/blog/2018/02/06/ejercicios-resueltos-consultas-sql-mysql/
+
+#Listar nombre y teléfono de los usuarios con teléfono LG, SAMSUNG o MOTOROLA
+SELECT nombre, telefono FROM tblUsuarios WHERE marca IN('LG', 'SAMSUNG', 'MOTOROLA');
+
+
+# Listar nombre y teléfono de los usuarios con teléfono que no sea de la marca LG o SAMSUNG
+SELECT nombre, telefono FROM tblUsuarios WHERE marca NOT IN('LG', 'SAMSUNG');
+
+# Listar el login y teléfono de los usuarios con compañia telefónica IUSACELL
+SELECT usuario, telefono FROM tblUsuarios WHERE compañia = 'IUSACELL';
+
+por ejemplo una pequeña diferencia seria agregar esto
+<>
+
+SELECT usuario, telefono FROM tblUsuarios WHERE compañia <> "TELCEL";
+
+# Calcular el saldo promedio de los usuarios que tienen teléfono marca NOKIA
+SELECT AVG(saldo) FROM tblUsuarios WHERE marca = 'NOKIA';
+
+
+
 
