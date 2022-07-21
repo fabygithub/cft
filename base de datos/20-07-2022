@@ -123,6 +123,29 @@ VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
 
 
 
+INSERT INTO `inventario`
+(`codigoInven`, `cantidad`, `valorArriendo`, `valorVenta`) 
+VALUES ('codigoInven','cantidad','valorArriendo','valorVenta')
+
+
+CREATE PROCEDURE `insertar_tupla`
+(IN `codigoInven` INT(11), 
+IN `cantidad` INT(11), 
+IN `valorArriendo` 
+INT(11), IN `valorVenta` 
+INT(11)) NOT DETERMINISTIC CONTAINS 
+SQL SQL SECURITY DEFINER 
+INSERT INTO `inventario` (`codigoInven`, `cantidad`, `valorArriendo`, `valorVenta`) 
+VALUES ('codigoInven','cantidad','valorArriendo','valorVenta')
+
+
+
+
+
+
+
+
+
 
 
 
