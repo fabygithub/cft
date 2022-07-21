@@ -237,6 +237,81 @@ SHOW DATABASES;
 SHOW PROCEDURE STATUS;
 
 
+mysql procedimientos almacenados
+
+CREATE TABLE productos (
+    id INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(20) NOT NULL,
+    estado VARCHAR(20) NOT NULL DEFAULT 'disponible',
+    precio FLOAT NOT NULL DEFAULT 0.0,
+    PRIMARY KEY(id)
+);
+
+
+DELIMITER $$
+CREATE PROCEDURE obtenerProductosPorEstado(IN nombre_estado VARCHAR(255))
+BEGIN
+    SELECT * 
+    FROM productos
+    WHERE estado = nombre_estado;
+END$$
+DELIMITER
+
+se elimina el delimiter de abajo
+
+
+nombre_estado = es una variable que se crea
+
+DELIMITER $$
+CREATE PROCEDURE obtenerProductosPorEstado(IN nombre_estado VARCHAR(255))
+BEGIN
+    SELECT * 
+    FROM productos
+    WHERE estado = nombre_estado;
+END$$
+
+seleccionar los productos disponibles
+
+CALL obtenerProductosPorEstado('disponible')
+
+la variable estado es una columna de la tabla productos
+
+
+DELIMITER $$
+CREATE PROCEDURE contarProductosPorEstado(
+    IN nombre_estado VARCHAR(25),
+    OUT numero INT)
+BEGIN
+    SELECT count (id) 
+    INTO numero
+    FROM productos
+    WHERE estado = nombre_estado;
+END$$
+DELIMITER
+
+
+se crea la variables in nombre_estado para ingresar un estado disponible o agotado
+out numero int es una variable creada que nos sirve para contar
+
+CALL contarProductosPorEstado('disponible', @numero);
+
+
+#1630 - FUNCTION fabian_cornejo.count does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+
+
+COUNT (`ID`)
+To:
+
+COUNT(`ID`)
+
+CALL contarProductosPorEstado('disponible', @numero);
+SELECT @numero AS disponibles;
+
+select @ = se tiene que seleccionar @numero pa ver el resultado
+
+
+
+
 
 
 
