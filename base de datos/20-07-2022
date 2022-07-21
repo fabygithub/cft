@@ -310,9 +310,20 @@ SELECT @numero AS disponibles;
 select @ = se tiene que seleccionar @numero pa ver el resultado
 
 
+DELIMITER $$
+CREATE PROCEDURE sumarProductosPorEstado(
+    IN nombre_estado VARCHAR(25),
+    OUT numero INT)
+BEGIN
+    SELECT sum(id) 
+    INTO numero
+    FROM productos
+    WHERE estado = nombre_estado;
+END$$
 
 
-
+CALL contarProductosPorEstado('disponible', @numero);
+SELECT @numero AS suma;
 
 
 
