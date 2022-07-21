@@ -326,6 +326,51 @@ CALL contarProductosPorEstado('disponible', @numero);
 SELECT @numero AS suma;
 
 
+DELIMITER $$
+CREATE PROCEDURE calculoMatematico(
+    INOUT beneficio INT(255),
+    IN id_producto INT)
+BEGIN
+    SELECT @incremento_precio = precio 
+    FROM productos
+    WHERE id = id_producto;
+    SET beneficio = beneficio + @incremento_precio;
+END$$
+
+
+beneficio = es una variable local y global int
+id_producto = variable local int
+
+select @incremento_precio = precio
+ahora incremento_precio es la variable de la tabla
+
+el beneficio se ingresa
+
+SET @beneficio = 0;
+CALL calculoMatematico(@beneficio, 1);
+SELECT @beneficio;
+
+SET @beneficio = 0;
+CALL venderProducto(@beneficio,1);
+SELECT @beneficio;
+
+SET @beneficio = 5;
+SET @incremento_precio = 5;
+CALL venderProducto(@beneficio, 2);
+SELECT @beneficio;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
