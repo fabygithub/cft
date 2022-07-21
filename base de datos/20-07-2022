@@ -220,6 +220,22 @@ stored procedure mysql update example
 How can I create a stored procedure to update values in a MySQL table?
 
 
+How to Show a List of All Databases in MySQL
+show databases in cmd
+
+mysql -u user -p
+
+mysql -u user -p
+Copy
+If you haven’t set a password for your MySQL user you can omit the -p switch.
+
+cmd mostrar bases de datos
+
+root
+SHOW DATABASES;
+
+SHOW PROCEDURE STATUS;
+
 
 
 
