@@ -10,3 +10,19 @@ SELECT nombre, telefono FROM tblUsuarios WHERE marca IN('NOKIA', 'BLACKBERRY', '
 #Contar los usuarios sin saldo o inactivos
 SELECT COUNT(*) FROM tblUsuarios WHERE NOT activo OR saldo <= 0;
 
+#Calcular la suma de los saldos de los usuarios de la compañia telefónica NEXTEL
+SELECT SUM(saldo) FROM tblUsuarios WHERE compañia = 'NEXTEL';
+
+#Contar el número de usuarios por compañía telefónica
+SELECT compañia, COUNT(*) FROM tblUsuarios GROUP BY compañia;
+
+#Contar el número de usuarios por nivel
+SELECT nivel, COUNT(*) FROM tblUsuarios GROUP BY nivel;
+
+#Listar el login de los usuarios con nivel 2
+SELECT usuario FROM tblUsuarios WHERE nivel = 2;
+
+
+
+https://parzibyte.me/blog/2018/02/06/ejercicios-resueltos-consultas-sql-mysql/
+
