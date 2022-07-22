@@ -22,6 +22,12 @@ Dirección IP	Dirección de red	Máscara de red	Dirección de Broadcast
  
  256-248 = 8
 
+ 256 - 255 = 1
+ 
+ todos los enlaces el prefijo es 30
+ 11111111.11111111.11111111.11111100
+   255      255        255     252
+ 
 
 Subred	Nº de Hosts	IP de red	Máscara	Primer Host	Último Host	Broadcast
 
@@ -32,4 +38,16 @@ Subred 2	2046	153.61.8.0 /21	255.255.248.0	153.61.8.1	153.61.15.254	153.61.15.25
 Subred 3	1022	153.61.16.0 /22	255.255.252.0	153.61.16.1	153.61.19.254	153.61.19.255
 
 Subred 4	254	153.61.20.0 /24	255.255.255.0	153.61.20.1	153.61.20.254	153.61.20.255
+
+a            153.61.21.0 /30  255.255.255.252  
+
+b
+
+c
+
+d
+
+
+
+
 
