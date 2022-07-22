@@ -13,7 +13,8 @@ Dirección IP	Dirección de red	Máscara de red	Dirección de Broadcast
 128 64 32 16 8 4 2 1 
 
  11
-2    =  2048  
+2    =  2048 -2 = 2046
+
 11111111.11111111.11111000.00000000
  255        255               0
  
