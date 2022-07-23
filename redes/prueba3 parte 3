@@ -31,7 +31,13 @@ anotar las subredes
 seleccionar nota
 escribir 192.100.3.0 - 255.255.255.192
 seleccionas y deseleccionas
-
+agregar los enlaces
+enlace A 192.100.3.144 - 255.255.255.252
+enlace B 192.100.3.148 - 255.255.255.252
+enlace C 192.100.3.152 - 255.255.255.252
+enlace D 192.100.3.156 - 255.255.255.252
+cofigurar los routers:
+abrir router
 
 
 
