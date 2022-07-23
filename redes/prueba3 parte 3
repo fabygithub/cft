@@ -1,1 +1,66 @@
 notas
+ejercicios resueltos vlsm packet tracer
+descargar ejercicios de packet tracer resueltos
+
+08 - VLSM Con Enrutamiento Estático en Packet Tracer (CYERD)
+
+1841 router0
+open router
+apargar el router
+agregar WIC-2T al espacio negro
+encenderlo
+cerrar
+copiar el router
+pegar 3 veces mas
+agregar nombres a cada uno de los routers
+seleccionar el cable serial
+y conectar router 1 y router 2 :
+serial 0/0/0  a serial 0/0/0
+router 1 con router 3 : 
+serial 0/0/1 a serial 0/0/1
+router 2 a router 4:
+serial 0/0/1 a serial 0/0/1
+router 3 a router 4:
+serial 0/0/0 a serial 0/0/0
+agregar 4 switch 2950-24
+elegir tipo de conexion automatico
+se conecta desde el switch hacia el router
+agregar 4 pc
+conectar pc a switch
+anotar las subredes
+seleccionar nota
+escribir 192.100.3.0 - 255.255.255.192
+seleccionas y deseleccionas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
