@@ -157,9 +157,29 @@ siguiente salto:
 router 1 a router 4: enlace d
 1 numero antes de la primera ip del router 2 (fast ethernet 0/0):
 192.100.3.128
-255.255.255.224
+255.255.255.240
 siguiente salto:
-192.100.3.154 2 mas del enlace a
+192.100.3.146 2 mas del enlace a
+
+router 1 a router 3: enlace d
+1 numero antes de la primera ip del router 2 (fast ethernet 0/0):
+192.100.3.128
+255.255.255.240
+siguiente salto:
+192.100.3.146 2 mas del enlace a
+
+
+
+router 2 a router 1  enlace a
+1 numero antes de la primera ip del router 2 (fast ethernet 0/0):
+192.100.3.128
+255.255.255.240
+siguiente salto:
+192.100.3.146 2 mas del enlace a
+
+
+
+
 
 
 
