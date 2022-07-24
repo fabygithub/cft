@@ -136,6 +136,33 @@ mascara 255.255.255.252
 ahora se pueden comunicar router con
 router
 
+rutas estaticas
+abrir router
+config
+estatica
+router 1 a router 2: enlace a
+1 numero antes de la primera ip del router 2 (fast ethernet 0/0):
+192.100.3.64
+siguiente salto:
+192.100.3.146 2 mas del enlace a
+
+
+router 1 a router 3: enlace c
+1 numero antes de la primera ip del router 2 (fast ethernet 0/0):
+192.100.3.96
+255.255.255.224
+siguiente salto:
+192.100.3.154 2 mas del enlace a
+
+router 1 a router 4: enlace d
+1 numero antes de la primera ip del router 2 (fast ethernet 0/0):
+192.100.3.128
+255.255.255.224
+siguiente salto:
+192.100.3.154 2 mas del enlace a
+
+
+
 
 
 
