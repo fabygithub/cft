@@ -2,3 +2,29 @@ cambiar el directorio de la pagina
 css/estilo.css
 
 css carpeta actual
+
+php and mysql projects with source code
+php and mysql basic with source code
+PHP: MySQL Database - W3Schools
+
+https://www.sourcecodeexamples.net/2021/08/login-system-with-php-and-mysql-database.html
+
+http://localhost/pagina%20covid/
+http://localhost/test2/login.php
+
+Warning: include(db_conn.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\test2\login.php on line 3
+php and mysql login password error
+PHP Registration Username/Password Incorrect
+
+User root normally has no password unless you've added one. 
+Try going into PHPMYADMIN or other config files and dig up the password for root.
+
+
+
+
+
+
+
+
+
+
