@@ -1,1 +1,61 @@
+#1072 - La columna clave
+la columna no existe
+
+
+CREATE TABLE director (
+   codigoDirector int,
+   PRIMARY KEY (codigoDirector)
+);
+
+
+CREATE TABLE forentrada (
+   codigoEntrada int(11),
+   PRIMARY KEY (codigoEntrada)
+);
+
+
+CREATE TABLE cliente (
+   codigoCliente varchar(13),
+   PRIMARY KEY (codigoCliente)
+);
+
+
+
+CREATE TABLE tipocliente (
+   tipoCliente int(11),
+   detalleCliente varchar(20),
+   PRIMARY KEY (tipoCliente)
+);
+
+
+
+CREATE TABLE persona (
+   codigoPersona int(11),
+   primerNombre varchar(20),
+   segundoNombre varchar(20),
+   apellidoPaterno varchar(20),
+   direccionCliente varchar(50), 
+   PRIMARY KEY (codigoPersona)
+);
+
+
+
+CREATE TABLE telefono (
+   codigoFono int(11),
+   telefono1 varchar(20),
+   telefono2 varchar(20),
+   telefono3 varchar(20),
+   PRIMARY KEY (codigoFono)
+);
+
+
+
+
+
+
+
+
+
+
+
 
