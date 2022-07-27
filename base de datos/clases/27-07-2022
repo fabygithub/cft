@@ -49,6 +49,86 @@ CREATE TABLE telefono (
 );
 
 
+CREATE TABLE tipopersona (
+   tipopersona int(11),
+   detallePerso varchar(20),
+   PRIMARY KEY (tipopersona)
+);
+
+
+CREATE TABLE ciudad (
+   codigoCiudad int(11),
+   nombreCiudad varchar(30),
+   PRIMARY KEY (codigoCiudad)
+);
+
+
+CREATE TABLE pais (
+   codigoPais int(11),
+   nombrePais varchar(20),
+   PRIMARY KEY (codigoPais)
+);
+
+
+CREATE TABLE vendedor (
+   codigoVendedor int(11),
+   rutVendedor varchar(13),
+   PRIMARY KEY (codigoVendedor)
+);
+
+
+CREATE TABLE facturacion (
+   idFacturacion int(11),
+   electronico varchar(20),
+   PRIMARY KEY (idFacturacion)
+);
+
+
+CREATE TABLE descuento (
+   idDescuento int(11),
+   detalleDescuento int(11),
+   PRIMARY KEY (idDescuento)
+);
+
+
+CREATE TABLE tipoventa (
+   idTipoVenta int(11),
+   detalleTipoVenta varchar(10),
+   PRIMARY KEY (idTipoVenta)
+);
+
+
+CREATE TABLE tipopago (
+   idTipoPago int(11),
+   detalleTipoPago varchar(15),
+   PRIMARY KEY (idTipoPago)
+);
+
+
+CREATE TABLE pago (
+   idPago int(11),
+   fecha date,
+   PRIMARY KEY (idPago)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
