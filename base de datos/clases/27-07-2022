@@ -112,6 +112,56 @@ CREATE TABLE pago (
 );
 
 
+CREATE TABLE forsalida (
+   codigoSalida int(11),
+   PRIMARY KEY (codigoSalida)
+);
+
+CREATE TABLE inventario (
+   codigoInven int(11),
+   PRIMARY KEY (codigoInven)
+);
+
+
+CREATE TABLE pelicula (
+   codigoPelicula int(11),
+    titulo varchar(50),
+    fechaExtreno date,
+    duracion varchar(10),
+    descripcion longtext,
+   PRIMARY KEY (codigoPelicula)
+);
+
+
+CREATE TABLE productora (
+   codigoProductora int(11),
+   nombreProductora varchar(50),
+   direccionPro varchar(45),
+   PRIMARY KEY (codigoProductora)
+);
+
+
+CREATE TABLE categoria (
+   codigoCategoria int(11),
+   nombreCategoria varchar(30),
+   PRIMARY KEY (codigoCategoria)
+);
+
+
+CREATE TABLE formato (
+   codigoFormato int(11),
+   detalleFormato varchar(15),
+   PRIMARY KEY (codigoFormato)
+);
+
+
+
+ALTER TABLE director ADD FOREIGN KEY(codigoPersona) REFERENCES director(codigoDirector);
+
+
+
+
+
 
 
 
