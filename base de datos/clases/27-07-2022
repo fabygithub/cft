@@ -155,8 +155,28 @@ CREATE TABLE formato (
 );
 
 
+MySQL ha dicho: Documentación
+#1072 - La columna clave 'codigoPersona' no existe en la tabla
+hay que crear el codigo persona en director
 
-ALTER TABLE director ADD FOREIGN KEY(codigoPersona) REFERENCES director(codigoDirector);
+
+alter table director add (codigoPersona int);
+ALTER TABLE director ADD FOREIGN KEY(codigoPersona) REFERENCES persona(codigoPersona);
+
+
+
+alter table inventario add (codigoPelicula int,cantidad int,valorArriendo int,valorVenta int);
+ALTER TABLE inventario ADD FOREIGN KEY(codigoPelicula) REFERENCES pelicula(codigoPelicula);
+
+
+
+
+
+
+
+
+
+
 
 
 
