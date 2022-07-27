@@ -170,6 +170,41 @@ ALTER TABLE inventario ADD FOREIGN KEY(codigoPelicula) REFERENCES pelicula(codig
 
 
 
+alter table pelicula add (codigoPais int,codigoProductora int,codigoDirector int,codigoCategoria int,codigoFormato int);
+
+ALTER TABLE pelicula ADD FOREIGN KEY(codigoPais) REFERENCES pais(codigoPais);
+ALTER TABLE pelicula ADD FOREIGN KEY(codigoProductora) REFERENCES productora(codigoProductora);
+ALTER TABLE pelicula ADD FOREIGN KEY(codigoDirector) REFERENCES director(codigoDirector);
+ALTER TABLE pelicula ADD FOREIGN KEY(codigoCategoria) REFERENCES categoria(codigoCategoria);
+ALTER TABLE pelicula ADD FOREIGN KEY(codigoFormato) REFERENCES formato(codigoFormato);
+
+
+
+#1064 - Algo está equivocado en su sintax cerca ')' 
+el error esta cerca del parentesis )
+
+#1005 - No puedo crear tabla `fabiancornejo`.`forentrada` (Error: 150 "Foreign key constraint is incorrectly formed")
+es porque hay un campo que es varchar
+
+
+alter table forentrada add (codigoCliente int,codigoSalida int,diaEntrada int,mesEntrada int,anioEntrada int,monto int);
+
+ALTER TABLE forentrada ADD FOREIGN KEY(codigoCliente) REFERENCES cliente(codigoCliente);
+ALTER TABLE forentrada ADD FOREIGN KEY(codigoSalida) REFERENCES forsalida(codigoSalida);
+
+
+ALTER TABLE forentrada MODIFY codigoCliente VARCHAR(13); 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
