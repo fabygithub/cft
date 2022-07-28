@@ -159,6 +159,11 @@ MySQL ha dicho: Documentación
 #1072 - La columna clave 'codigoPersona' no existe en la tabla
 hay que crear el codigo persona en director
 
+#1060 - Nombre de columna duplicado 'codigoCliente'
+
+Cannot add or update a child row:
+no se puede insertar la clave foranea
+
 
 alter table director add (codigoPersona int);
 ALTER TABLE director ADD FOREIGN KEY(codigoPersona) REFERENCES persona(codigoPersona);
@@ -194,6 +199,45 @@ ALTER TABLE forentrada ADD FOREIGN KEY(codigoSalida) REFERENCES forsalida(codigo
 
 
 ALTER TABLE forentrada MODIFY codigoCliente VARCHAR(13); 
+ALTER TABLE forsalida MODIFY codigoCliente VARCHAR(13); 
+
+
+
+alter table cliente add (codigoPersona int,diaNacimiento int,mesNacimiento int,anoNacimiento int,tipocliente int);
+ALTER TABLE cliente ADD FOREIGN KEY(codigoPersona) REFERENCES persona(codigoPersona);
+
+alter table forsalida add (codigoCliente int,codigoInven int,codigoVendedor int,dia int,mes int,ano int,diaDevolucion int,mesDevolucion int,anoDevolucion int);
+
+ALTER TABLE forsalida ADD FOREIGN KEY(codigoCliente) REFERENCES cliente(codigoCliente);
+ALTER TABLE forsalida ADD FOREIGN KEY(codigoInven) REFERENCES inventario(codigoInven);
+ALTER TABLE forsalida ADD FOREIGN KEY(codigoVendedor) REFERENCES vendedor(codigoVendedor);
+
+alter table pago add (codigoSalida int,idTipoPago int,idTipoVenta int,idDescuento int,idFacturacion int,monto int);
+
+ALTER TABLE pago ADD FOREIGN KEY(codigoSalida) REFERENCES forsalida(codigoSalida);
+ALTER TABLE pago ADD FOREIGN KEY(idTipoPago) REFERENCES tipopago(idTipoPago);
+ALTER TABLE pago ADD FOREIGN KEY(idTipoVenta) REFERENCES tipoventa(idTipoVenta);
+ALTER TABLE pago ADD FOREIGN KEY(idDescuento) REFERENCES descuento(idDescuento);
+ALTER TABLE pago ADD FOREIGN KEY(idFacturacion) REFERENCES facturacion(idFacturacion);
+
+
+alter table vendedor add (codigoPersona int);
+ALTER TABLE vendedor ADD FOREIGN KEY(codigoPersona) REFERENCES persona(codigoPersona);
+
+INSERT INTO `director`(`codigoDirector`, `codigoPersona`) 
+VALUES ('1',null)
+
+INSERT INTO `forentrada`(`codigoEntrada`, `codigoCliente`, `codigoSalida`, `diaEntrada`, `mesEntrada`, `anioEntrada`, `monto`) 
+VALUES ('1',null,null,'2','11','1233','142')
+
+
+
+
+
+
+
+
+
 
 
 
