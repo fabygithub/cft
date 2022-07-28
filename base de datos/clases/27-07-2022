@@ -191,6 +191,9 @@ el error esta cerca del parentesis )
 #1005 - No puedo crear tabla `fabiancornejo`.`forentrada` (Error: 150 "Foreign key constraint is incorrectly formed")
 es porque hay un campo que es varchar
 
+#1054 - La columna '2a' en field list es desconocida
+esta mal escrito el tipo
+
 
 alter table forentrada add (codigoCliente int,codigoSalida int,diaEntrada int,mesEntrada int,anioEntrada int,monto int);
 
@@ -200,6 +203,7 @@ ALTER TABLE forentrada ADD FOREIGN KEY(codigoSalida) REFERENCES forsalida(codigo
 
 ALTER TABLE forentrada MODIFY codigoCliente VARCHAR(13); 
 ALTER TABLE forsalida MODIFY codigoCliente VARCHAR(13); 
+ALTER TABLE persona MODIFY codigoPersona int(11) NOT null; 
 
 
 
@@ -230,7 +234,16 @@ VALUES ('1',null)
 INSERT INTO `forentrada`(`codigoEntrada`, `codigoCliente`, `codigoSalida`, `diaEntrada`, `mesEntrada`, `anioEntrada`, `monto`) 
 VALUES ('1',null,null,'2','11','1233','142')
 
+INSERT INTO `inventario`(`codigoInven`, `codigoPelicula`, `cantidad`, `valorArriendo`, `valorVenta`) VALUES (1,null,32,111,423)
 
+SELECT * FROM forentrada
+
+
+INSERT INTO `cliente`(`codigoCliente`, `codigoPersona`, `diaNacimiento`, `mesNacimiento`, `anoNacimiento`, `tipocliente`) 
+VALUES (1,null,12,11,1444,2)
+
+
+primero hay que insertar las que no tienen foranea
 
 
 
