@@ -1,0 +1,32 @@
+requerimiento pasar a aplicacion
+objetivos = requerimientos funcionales
+software aplicado de mala forma
+entradas sistema salidas
+hacer un sistema
+herramienta grafica como lo voy a hacer
+diagrama de contexto
+
+sistemas de pedidos de libros
+entidad : cliente  -> pedidos cancelados
+gerencia  <- informe de ventas
+editora
+contabilidad
+
+
+club de video
+editorial 
+cliente
+proovedor
+
+sistema biblioteca
+alumno pide libro devuelve libro
+
+
+
+
+
+
+
+
+
+
